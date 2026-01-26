@@ -1,14 +1,9 @@
-/* ==================================================
-   PAGE LOAD
-================================================== */
 window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 });
 
 
-/* ==================================================
-   REVEAL ON SCROLL (INTELIGENTE)
-================================================== */
+
 const revealElements = document.querySelectorAll(".reveal");
 
 const revealOnScroll = () => {
@@ -26,10 +21,6 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
-
-/* ==================================================
-   SMOOTH SCROLL (ÂNCORAS)
-================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -44,9 +35,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-/* ==================================================
-   HERO TYPING EFFECT (CORRIGIDO)
-================================================== */
 const typingElement = document.querySelector('.typing');
 if (typingElement) {
     const text = typingElement.textContent.trim();
@@ -60,18 +48,16 @@ if (typingElement) {
             setTimeout(typeEffect, 50);
         }
     }
-    // Inicia após um pequeno delay
+
     setTimeout(typeEffect, 400);
 }
 
-/* ==================================================
-   SMOOTH SCROLL (MELHORADO)
-================================================== */
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         const href = this.getAttribute("href");
         
-        // Se for apenas "#", sobe para o topo
+
         if (href === "#") {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
@@ -81,7 +67,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
-            // Fecha o menu mobile ao clicar (se estiver aberto)
+
             navMenu.classList.remove('active');
             
             target.scrollIntoView({
@@ -91,9 +77,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-/* ==================================================
-   BUTTON INTERACTION (FEEDBACK REAL)
-================================================== */
+
 const interactiveButtons = document.querySelectorAll(
     ".btn-primary, .btn-secondary"
 );
@@ -113,9 +97,6 @@ interactiveButtons.forEach(btn => {
 });
 
 
-/* ==================================================
-   SECTION FOCUS (SUTIL, SEM POLUIR)
-================================================== */
 const sections = document.querySelectorAll("section");
 
 const focusSection = () => {
@@ -136,9 +117,6 @@ const focusSection = () => {
 window.addEventListener("scroll", focusSection);
 
 
-/* ==================================================
-   CTA DINÂMICO (INTELIGENTE)
-================================================== */
 const ctaButton = document.querySelector('.hero-actions .btn-primary');
 
 if (ctaButton) {
@@ -154,9 +132,6 @@ if (ctaButton) {
 }
 
 
-/* ==================================================
-   MICRO DELAY PARA UX SUAVE
-================================================== */
 let isTicking = false;
 
 window.addEventListener("scroll", () => {
