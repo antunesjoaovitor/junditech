@@ -159,3 +159,47 @@ window.addEventListener('scroll', () => {
 navToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
+
+
+
+
+
+
+
+
+//----------------------------- REQUISIÇÕES HTTP --------------------------------//
+
+
+
+const botaoEnviar = document.getElementById("enviarDemo");
+const feedback = document.getElementById("feedback");
+
+botaoEnviar.addEventListener("click", async () => {
+  const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
+  const problema = document.getElementById("problema").value;
+
+  feedback.textContent = "Enviando...";
+  feedback.style.color = "#cbd5f5";
+
+  try {
+    const resposta = await fetch("http://localhost:5678/webhook/e9ca83ba-8966-4b95-bc42-203c31b4324a", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ nome, telefone, problema })
+    });
+
+    if (!resposta.ok) {
+      throw new Error("Erro no envio");
+    }
+
+    feedback.style.color = "#22c55e";
+    feedback.textContent = "✅ Recebido! Em breve entrarei em contato.";
+  } catch (erro) {
+    feedback.style.color = "#ef4444";
+    feedback.textContent = "❌ Erro ao enviar. Tente novamente.";
+    console.error(erro);
+  }
+});
