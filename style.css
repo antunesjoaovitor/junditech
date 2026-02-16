@@ -1,16 +1,10 @@
-/* Garante que o conteúdo não comece atrás da navbar */
-body {
-    padding-top: 80px; 
-}
-
-/* Ajuste do Logo para não "fugir" da tela */
 .nav-logo img {
-    width: 180px; /* Reduzi um pouco para equilíbrio */
-    margin-left: 0; /* Remova o negativo para evitar bugs mobile */
+    width: 180px; 
+    margin-left: 0; 
     object-fit: contain;
 }
 
-/* Melhoria no Menu Mobile */
+
 @media (max-width: 768px) {
     .nav-menu {
         width: 200px;
@@ -18,7 +12,7 @@ body {
     }
 }
 
-/* ================= RESET ================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -53,17 +47,17 @@ a {
     text-decoration: none;
 }
 
-/* ================= BUTTONS ================= */
+
 .btn-primary, .btn-secondary {
-    display: inline-flex; /* Garante que o botão respeite o conteúdo */
-    align-items: center;  /* Centraliza o texto e ícone verticalmente */
+    display: inline-flex;
+    align-items: center;  
     justify-content: center;
     padding: 14px 36px;
     border-radius: 999px;
     font-weight: 600;
     transition: all 0.3s ease;
     text-align: center;
-    min-width: 200px;     /* Opcional: define uma largura mínima para padronizar */
+    min-width: 200px;     
     cursor: pointer;
     text-decoration: none;
 }
@@ -86,7 +80,7 @@ a {
     box-shadow: 0 15px 35px rgba(56,189,248,0.35);
 }
 
-/* ================= HERO ================= */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -120,7 +114,6 @@ a {
     flex-wrap: wrap;
 }
 
-/* ================= SECTION HEADER ================= */
 .section-header {
     max-width: 720px;
     margin: 0 auto 60px;
@@ -132,8 +125,7 @@ a {
     margin-bottom: 15px;
 }
 
-/* ================= SERVICES ================= */
-.services {
+fff.services {
     background: #020617;
 }
 
@@ -163,7 +155,6 @@ a {
     margin-bottom: 15px;
 }
 
-/* ================= EXPERTISE ================= */
 .backend {
     background: linear-gradient(135deg, #020617, #020617);
     padding: 100px 20px;
@@ -219,7 +210,6 @@ a {
 }
 
 
-/* ================= CUSTOM SOLUTION ================= */
 .custom-solution {
     background: radial-gradient(circle at center, #0f172a, #020617);
 }
