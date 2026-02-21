@@ -183,7 +183,7 @@ botaoEnviar.addEventListener("click", async () => {
   feedback.style.color = "#cbd5f5";
 
   try {
-    const resposta = await fetch("https://examination-mhz-latitude-corps.trycloudflare.com/webhook/e9ca83ba-8966-4b95-bc42-203c31b4324a", {
+    const resposta = await fetch("https://api.junditech.com.br/webhook/e9ca83ba-8966-4b95-bc42-203c31b4324a", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
