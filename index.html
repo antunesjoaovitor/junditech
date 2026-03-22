@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>JundiTech | Automação, Integrações, VoIP e Desenvolvimento</title>
     <meta name="description" content="Automação de processos, integrações com APIs, IA, VoIP, SIP, telecom e desenvolvimento de sites e sistemas sob medida.">
     <meta name="keywords" content="automação, APIs, integração, IA, VoIP, SIP, telecom, desenvolvimento web, infraestrutura, suporte técnico">
@@ -11,17 +10,17 @@
     <meta property="og:title" content="JundiTech | Automação, Integrações, VoIP e Desenvolvimento">
     <meta property="og:description" content="Soluções em automação, APIs, telecom, infraestrutura e desenvolvimento sob medida.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="junditech.png">
+    <meta property="og:image" content="junditech.png?v=4">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="junditech.png">
+    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="icon" href="junditech.png?v=4">
 </head>
 <body id="home">
 
     <header class="navbar" id="topo">
         <div class="nav-container">
             <a href="#home" class="nav-brand" aria-label="Ir para o início">
-                <img src="junditech.png" alt="Logo da JundiTech">
+                <img src="junditech.png?v=4" alt="Logo da JundiTech">
                 <span class="brand-name">JundiTech</span>
             </a>
 
@@ -62,57 +61,99 @@
         <section id="servicos" class="services">
             <div class="section-header reveal">
                 <h2>O que eu faço?</h2>
-                <p>Soluções técnicas, precisas e rápidas para reduzir falhas, economizar tempo e melhorar sua operação.</p>
+                <p>
+                    Veja exemplos visuais das soluções que desenvolvo. A apresentação troca automaticamente,
+                    mas você também pode navegar manualmente.
+                </p>
             </div>
 
-            <div class="services-grid">
-                <article class="service-card reveal">
-                    <h3>🤖 Automação & IA</h3>
-                    <p>
-                        Automação de vendas, atendimentos e processos internos com fluxos inteligentes,
-                        IA e redução de trabalho manual.
-                    </p>
-                </article>
+            <div class="service-showcase reveal" id="serviceShowcase">
+                <button class="showcase-arrow prev" id="showcasePrev" type="button" aria-label="Serviço anterior">‹</button>
 
-                <article class="service-card reveal">
-                    <h3>🔌 APIs & Integrações</h3>
-                    <p>
-                        Integração entre sistemas, plataformas externas, ERPs, CRMs, gateways e APIs
-                        para eliminar retrabalho e conectar operações.
-                    </p>
-                </article>
+                <div class="showcase-content">
+                    <div class="showcase-media">
+                        <div class="showcase-slide active">
+                            <img src="integracaocrm.jpeg" alt="Exemplo de automação com IA">
+                        </div>
+                        <div class="showcase-slide">
+                            <img src="api.png" alt="Exemplo de integração entre APIs">
+                        </div>
+                        <div class="showcase-slide">
+                            <img src="sip.jpeg" alt="Exemplo de solução em VoIP e telecom">
+                        </div>
+                        <div class="showcase-slide">
+                            <img src="devsite.jpeg" alt="Exemplo de site ou sistema">
+                        </div>
+                        <div class="showcase-slide">
+                            <img src="infra.jpeg" alt="Exemplo de infraestrutura de rede">
+                        </div>
+                        <div class="showcase-slide">
+                            <img src="suporte.jpeg" alt="Exemplo de suporte técnico">
+                        </div>
+                    </div>
 
-                <article class="service-card reveal">
-                    <h3>📞 VoIP, SIP & Telecom</h3>
-                    <p>
-                        Soluções em comunicação com foco em VoIP, SIP, Asterisk, telefonia e integração
-                        entre sistemas e chamadas.
-                    </p>
-                </article>
+                    <div class="showcase-info">
+                        <div class="showcase-text active">
+                            <span class="service-tag">🤖 Automação & IA</span>
+                            <h3>Fluxos inteligentes para reduzir trabalho manual</h3>
+                            <p>
+                                Automatizo vendas, atendimentos e processos internos com regras inteligentes,
+                                IA e integrações que economizam tempo e melhoram a operação.
+                            </p>
+                        </div>
 
-                <article class="service-card reveal">
-                    <h3>💻 Desenvolvimento de Sites e Sistemas</h3>
-                    <p>
-                        Desenvolvimento de sites, páginas comerciais, sistemas sob medida e soluções
-                        com ou sem backend, focadas em performance e conversão.
-                    </p>
-                </article>
+                        <div class="showcase-text">
+                            <span class="service-tag">🔌 APIs & Integrações</span>
+                            <h3>Sistemas automatizados e integrados</h3>
+                            <p>
+                                Integro Sites, CRMs, gateways, webhooks e plataformas externas para conectar
+                                dados, automatizar ações e eliminar tarefas repetitivas.
+                            </p>
+                        </div>
 
-                <article class="service-card reveal">
-                    <h3>🌐 Redes & Infraestrutura</h3>
-                    <p>
-                        Configuração e manutenção de redes, servidores, firewalls, VPNs e infraestrutura
-                        de TI para manter seu ambiente estável e seguro.
-                    </p>
-                </article>
+                        <div class="showcase-text">
+                            <span class="service-tag">📞 VoIP, SIP & Telecom</span>
+                            <h3>Soluções e integrações para comunicação eficiente</h3>
+                            <p>
+                                Soluções e integrações com VoIP, SIP, Asterisk e integrações com chamadas, gravações,
+                                relatórios e automações ligadas à comunicação.
+                            </p>
+                        </div>
 
-                <article class="service-card reveal">
-                    <h3>⚒️ Suporte Remoto e Presencial</h3>
-                    <p>
-                        Suporte técnico remoto e presencial para manutenção, configuração, diagnóstico
-                        e resolução de problemas diversos.
-                    </p>
-                </article>
+                        <div class="showcase-text">
+                            <span class="service-tag">💻 Sites & Sistemas</span>
+                            <h3>Sistemas intuitivos e próprios</h3>
+                            <p>
+                                Desenvolvimento de sites, páginas comerciais, painéis e sistemas automatizados
+                            </p>
+                        </div>
+
+                        <div class="showcase-text">
+                            <span class="service-tag">🌐 Redes & Infraestrutura</span>
+                            <h3>Ambiente estável, seguro e pronto para crescer</h3>
+                            <p>
+                                Configuração e manutenção de redes, servidores, VPNs, firewalls e infraestrutura
+                                para manter seus serviços funcionando com confiabilidade por nossa conta.
+                            </p>
+                        </div>
+
+                        <div class="showcase-text">
+                            <span class="service-tag">⚒️ Suporte Técnico</span>
+                            <h3>Atendimento remoto e presencial</h3>
+                            <p>
+                                Diagnóstico, manutenção, configuração e resolução de problemas técnicos diversos,
+                                com atendimento rápido e foco em solução prática.
+                            </p>
+                        </div>
+
+                        <div class="showcase-controls">
+                            <div class="showcase-dots" id="showcaseDots"></div>
+                            <a href="#contato" class="btn-primary showcase-cta">Me interessei!</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="showcase-arrow next" id="showcaseNext" type="button" aria-label="Próximo serviço">›</button>
             </div>
         </section>
 
@@ -185,7 +226,7 @@
                 </p>
 
                 <div class="contact-actions">
-                    <a href="mailto:junditechnology@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">💻 E-mail</a>
+                    <a href="mailto:junditechnology@gmail.com" class="btn-primary">📧 E-mail</a>
                     <a href="https://github.com/antunesjoaovitor" target="_blank" rel="noopener noreferrer" class="btn-secondary">💻 GitHub</a>
                     <a href="https://www.instagram.com/junditech/" target="_blank" rel="noopener noreferrer" class="btn-secondary">📷 Instagram</a>
                 </div>
@@ -197,6 +238,6 @@
         <p>© 2026 JundiTech — Automação, APIs e Comunicação</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

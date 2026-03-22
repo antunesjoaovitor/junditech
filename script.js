@@ -10,11 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const botaoEnviar = document.getElementById("enviarDemo");
     const feedback = document.getElementById("feedback");
     const telefoneInput = document.getElementById("telefone");
-
     const nomeInput = document.getElementById("nome");
     const problemaInput = document.getElementById("problema");
 
-    // ===== MENU MOBILE =====
     if (navToggle && navMenu) {
         navToggle.addEventListener("click", () => {
             const isActive = navMenu.classList.toggle("active");
@@ -22,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===== SCROLL SUAVE + FECHAR MENU =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             const href = this.getAttribute("href");
@@ -48,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // ===== EFEITO DE DIGITAÇÃO =====
     const typingElement = document.querySelector(".typing");
     if (typingElement) {
         const text = typingElement.textContent.trim();
@@ -66,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(typeEffect, 350);
     }
 
-    // ===== MÁSCARA DE TELEFONE =====
     if (telefoneInput) {
         telefoneInput.addEventListener("input", function () {
             let numero = this.value.replace(/\D/g, "");
@@ -85,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===== FUNÇÕES DE SCROLL =====
     function revealOnScroll() {
         const triggerBottom = window.innerHeight * 0.88;
 
@@ -154,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     handleScrollEffects();
 
-    // ===== FORMULÁRIO =====
     function setFeedback(message, type = "default") {
         if (!feedback) return;
 
@@ -218,7 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 setFeedback("✅ Recebido! Em breve entrarei em contato.", "success");
-
                 form.reset();
             } catch (erro) {
                 console.error("Erro ao enviar formulário:", erro);
@@ -228,5 +220,106 @@ document.addEventListener("DOMContentLoaded", () => {
                 botaoEnviar.textContent = "Enviar";
             }
         });
+    }
+
+    const showcase = document.getElementById("serviceShowcase");
+    const prevBtn = document.getElementById("showcasePrev");
+    const nextBtn = document.getElementById("showcaseNext");
+    const slides = document.querySelectorAll(".showcase-slide");
+    const texts = document.querySelectorAll(".showcase-text");
+    const dotsContainer = document.getElementById("showcaseDots");
+
+    if (showcase && prevBtn && nextBtn && slides.length && texts.length && dotsContainer) {
+        let currentIndex = 0;
+        let interval = null;
+
+        slides.forEach((_, index) => {
+            const dot = document.createElement("button");
+            dot.classList.add("showcase-dot");
+            dot.type = "button";
+            dot.setAttribute("aria-label", `Ir para o serviço ${index + 1}`);
+
+            if (index === 0) {
+                dot.classList.add("active");
+            }
+
+            dot.addEventListener("click", () => {
+                goToSlide(index);
+                restartAutoplay();
+            });
+
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll(".showcase-dot");
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === currentIndex);
+
+                const video = slide.querySelector("video");
+                if (video) {
+                    if (index === currentIndex) {
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                }
+            });
+
+            texts.forEach((text, index) => {
+                text.classList.toggle("active", index === currentIndex);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            updateSlides();
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            interval = setInterval(nextSlide, 6000);
+        }
+
+        function stopAutoplay() {
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+        }
+
+        function restartAutoplay() {
+            startAutoplay();
+        }
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            restartAutoplay();
+        });
+
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            restartAutoplay();
+        });
+
+        showcase.addEventListener("mouseenter", stopAutoplay);
+        showcase.addEventListener("mouseleave", startAutoplay);
+
+        updateSlides();
+        startAutoplay();
     }
 });
